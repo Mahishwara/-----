@@ -36,7 +36,7 @@ export const Profile: React.FC = () => {
     useEffect(() => {
         const fetchSkills = async () => {
             try {
-                const response = await axios.get<LevelSkill[]>(import.meta.env.VITE_BASE_URL + `api/skills`, {
+                const response = await axios.get<LevelSkill[]>(`https://karasevmikhail.pythonanywhere.com/api/skills`, {
                     headers: { 'Content-Type': 'application/json' }
                 });
                 setSkills(response.data); 
