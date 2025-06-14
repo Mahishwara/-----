@@ -57,7 +57,7 @@ export const Profile: React.FC = () => {
                         const response = await axios({
                             method: 'GET',
                             headers: { 'Content-Type': 'application/json' },
-                            url: import.meta.env.VITE_BASE_URL + `api/students/${userData.student_id}`
+                            url: `https://karasevmikhail.pythonanywhere.com/api/students/${userData.student_id}`
                         });
                         setStudentData(response.data);
                     } catch (err) {
