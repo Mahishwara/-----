@@ -36,7 +36,7 @@ export const Profile: React.FC = () => {
     useEffect(() => {
         const fetchSkills = async () => {
             try {
-                const response = await axios.get<LevelSkill[]>(`https://karasevmikhail.pythonanywhere.com/api/skills`, {
+                const response = await axios.get<LevelSkill[]>( import.meta.env.VITE_BASE_URL + `api/skills`, {
                     headers: { 'Content-Type': 'application/json' }
                 });
                 setSkills(response.data); 
@@ -57,7 +57,7 @@ export const Profile: React.FC = () => {
                         const response = await axios({
                             method: 'GET',
                             headers: { 'Content-Type': 'application/json' },
-                            url: `https://karasevmikhail.pythonanywhere.com/api/students/${userData.student_id}`
+                            url: import.meta.env.VITE_BASE_URL + `api/students/${userData.student_id}`
                         });
                         setStudentData(response.data);
                     } catch (err) {
